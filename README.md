@@ -43,3 +43,7 @@ Useful Links
 Vite Documentation
 mui material documentation
 axios documentation
+
+![tela 1](https://github.com/lhbizzi/pokedexPokeLord/assets/106413189/b75ace0e-09e1-4427-873a-1a13757e0807)
+![tela 2](https://github.com/lhbizzi/pokedexPokeLord/assets/106413189/4585ff2c-5ef6-4a97-8238-2a3909b7dd69)
+
