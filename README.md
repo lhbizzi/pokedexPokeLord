@@ -15,16 +15,16 @@ git clone https://github.com/lhbizzi/pokedexPokeLord
 cd pokedexPokeLord
 
 ## Install the dependencies
-Using npm:
+- Using npm:
 npm install react react-dom axios @material-ui/core
 
-Using yarn:
+- Using yarn:
 yarn add react react react-dom axios @material-ui/core
 
 ## Run the project
 Using npm:
-npm start
-yarn run 
+- npm start
+- yarn run 
 
 ## The project will be available at http://localhost:3000/ in your browser.
 Project Structure
