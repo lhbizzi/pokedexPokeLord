@@ -28,22 +28,22 @@ Using npm:
 
 ## The project will be available at http://localhost:3000/ in your browser.
 Project Structure
-src/components: Folder where the used components are located, such as navbar, skeleton, etc.
-src/pages: Folder where the project pages are located.
-src/Router: Folder where de routes were configured.
-src/uils: Folders where useful functions have been placed for reuse.
+- src/components: Folder where the used components are located, such as navbar, skeleton, etc.
+- src/pages: Folder where the project pages are located.
+- src/Router: Folder where de routes were configured.
+- src/uils: Folders where useful functions have been placed for reuse.
 
 ## Features
-Viewing the pokemon list.
-Searching for pokemons by name.
-Detailed viewing of each pokemon.
-Author
-Lucas Bizzi lucas.bizzi.lb@gmail.com
+- Viewing the pokemon list.
+- Searching for pokemons by name.
+- Detailed viewing of each pokemon.
+## Author
+- Lucas Bizzi lucas.bizzi.lb@gmail.com
 
 ## Useful Links
-React Documentation,
-mui material documentation,
-axios documentation.
+- React Documentation,
+- mui material documentation,
+- axios documentation.
 
 Home:
 ![tela 1](https://github.com/lhbizzi/pokedexPokeLord/assets/106413189/b75ace0e-09e1-4427-873a-1a13757e0807)
