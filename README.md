@@ -32,7 +32,7 @@ src/pages: Folder where the project pages are located.
 src/Router: Folder where de routes were configured.
 src/uils: Folders where useful functions have been placed for reuse.
 
-Features
+Features/n
 Viewing the pokemon list.
 Searching for pokemons by name.
 Detailed viewing of each pokemon.
