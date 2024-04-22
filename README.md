@@ -40,7 +40,7 @@ Author
 Lucas Bizzi lucas.bizzi.lb@gmail.com
 
 Useful Links
-Vite Documentation
+React Documentation
 mui material documentation
 axios documentation
 
