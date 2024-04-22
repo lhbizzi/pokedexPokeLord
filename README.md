@@ -7,11 +7,10 @@ Axios
 Prerequisites
 Node.js installed (v14.x or higher)
 npm or yarn
-How to Run
-Clone this repository:
-git clone https://github.com/lhbizzi/pokedexPokeLord
+## How to Run
+Clone this repository: git clone https://github.com/lhbizzi/pokedexPokeLord
 
-## Access the project directory:
+- Access the project directory:
 cd pokedexPokeLord
 
 ## Install the dependencies
