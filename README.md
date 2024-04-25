@@ -44,6 +44,9 @@ Project Structure
 - mui material documentation,
 - axios documentation.
 
+## Link to test
+To test the website, simply click on the link next to it:[PokeLord](https://pokedex-poke-lord.vercel.app).
+
 Home:
 ![tela 1](https://github.com/lhbizzi/pokedexPokeLord/assets/106413189/b75ace0e-09e1-4427-873a-1a13757e0807)
 Profile:
