@@ -7,7 +7,6 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
 
-
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -59,17 +58,21 @@ export default function Navbar({ pokemonFilter, hideSearch }) {
           <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
             <Box component="img" alt="PokeLord" src="/assets/logo.png" height={80} sx={{cursor: 'pointer'}} onClick={() => navigate('/')}/>
             {!hideSearch && (
-              <Search onChange={(e) => pokemonFilter(e.target.value.toLowerCase())}>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ 'aria-label': 'search' }}
+                  onChange={(e) => {
+                    const searchValue = e.target.value.toLowerCase();
+                    console.log(searchValue); // Verifica o valor capturado
+                    pokemonFilter(searchValue);
+                  }}
+                />
+              </Search>
             )}
-            
           </Box>
         </Toolbar>
       </AppBar>
