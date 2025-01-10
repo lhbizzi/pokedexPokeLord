@@ -18,7 +18,7 @@ export const Home = ({ setPokemonData }) => {
 
   const getPokemons = async () => {
     const endpoints = Array.from(
-      { length: 100 },
+      { length: 1025 },
       (_, i) => `https://pokeapi.co/api/v2/pokemon/${i + 1}/`,
     );
 
