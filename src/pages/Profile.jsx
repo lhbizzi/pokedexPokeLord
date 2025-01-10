@@ -62,7 +62,7 @@ export const Profile = ({ pokemonData }) => {
             p={5}
             flexDirection="column"
           >
-            <Typography variant="h4">{name}</Typography>
+            <Typography variant="h4">{name.toLowerCase().includes(name.toLowerCase())}</Typography>
             <Box
               display="flex"
               m={5}
