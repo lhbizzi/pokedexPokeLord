@@ -11,12 +11,12 @@ import {
 import PokeTable from "../components/PokeTable";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import indisponível from '../assets/indisponivel.png';
+import indisponível from "../assets/indisponivel.png";
 
 export const Profile = ({ pokemonData }) => {
   const { name, sprites, moves, id } = pokemonData || {};
   const navigate = useNavigate();
-  const [ animation, setAnimation ] = useState(null);
+  const [animation, setAnimation] = useState(null);
 
   useEffect(() => {
     if (!pokemonData) {
@@ -35,13 +35,14 @@ export const Profile = ({ pokemonData }) => {
     .get(
       `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`,
     )
-    .then(() => {setAnimation(true);})
+    .then(() => {
+      setAnimation(true);
+    })
     .catch(() => setAnimation(null));
 
   if (animation) {
     respGif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`;
-  }
-  else {
+  } else {
     respGif = indisponível;
   }
 
@@ -62,7 +63,9 @@ export const Profile = ({ pokemonData }) => {
             p={5}
             flexDirection="column"
           >
-            <Typography variant="h4">{name.toLowerCase().includes(name.toLowerCase())}</Typography>
+            <Typography variant="h4">
+              {name.charAt(0).toUpperCase() + name.slice(1)}
+            </Typography>
             <Box
               display="flex"
               m={5}
@@ -150,7 +153,12 @@ export const Profile = ({ pokemonData }) => {
                 </Box>
               </Box>
               <Divider>Animação</Divider>
-              <Box display="flex" justifyContent={"center"} alignItems={"center"} margin={"30px"}>
+              <Box
+                display="flex"
+                justifyContent={"center"}
+                alignItems={"center"}
+                margin={"30px"}
+              >
                 <Box
                   component="img"
                   src={respGif}
