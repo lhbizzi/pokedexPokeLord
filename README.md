@@ -27,10 +27,11 @@ Using npm:
 
 ## The project will be available at http://localhost:3000/ in your browser.
 Project Structure
+- src/assets: Folder where the images of the project are.
 - src/components: Folder where the used components are located, such as navbar, skeleton, etc.
 - src/pages: Folder where the project pages are located.
 - src/Router: Folder where de routes were configured.
-- src/uils: Folders where useful functions have been placed for reuse.
+- src/urtils: Folders where useful functions have been placed for reuse.
 
 ## Features
 - Viewing the pokemon list.
