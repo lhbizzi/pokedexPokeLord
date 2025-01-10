@@ -45,6 +45,11 @@ export const Profile = ({ pokemonData }) => {
     respGif = indisponível;
   }
 
+  if (sprites.front_female) {
+    nameInfo = "Versão Feminina";
+    nameInfo1 = "Versão Shiny Feminina";
+  }
+
   return (
     <>
       <Navbar hideSearch />
