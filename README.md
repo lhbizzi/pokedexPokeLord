@@ -49,7 +49,9 @@ Project Structure
 To test the website, simply click on the link next to it: [PokeLord](https://pokedex-poke-lord.vercel.app).
 
 Home:
-![tela 1](https://github.com/lhbizzi/pokedexPokeLord/assets/106413189/b75ace0e-09e1-4427-873a-1a13757e0807)
+![image](https://github.com/user-attachments/assets/e0640fbc-24f9-4ee8-a1f8-e4611bedaa2d)
 Profile:
-![tela 2](https://github.com/lhbizzi/pokedexPokeLord/assets/106413189/4585ff2c-5ef6-4a97-8238-2a3909b7dd69)
+![image](https://github.com/user-attachments/assets/6d3a536e-52c5-4d99-9566-15b896941d61)
+Profile:
+![image](https://github.com/user-attachments/assets/e40353a9-cf6b-456c-9373-01ccd035b6f1)
 
