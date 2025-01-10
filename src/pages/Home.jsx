@@ -18,7 +18,7 @@ export const Home = ({ setPokemonData }) => {
 
   const getPokemons = async () => {
     const endpoints = Array.from(
-      { length: 1025 },
+      { length: 100 },
       (_, i) => `https://pokeapi.co/api/v2/pokemon/${i + 1}/`,
     );
 
@@ -69,6 +69,7 @@ export const Home = ({ setPokemonData }) => {
                     }
                     image={pokemon.sprites.front_default}
                     types={pokemon.types}
+                    id={pokemon.id}
                   />
                 </Box>
               </Grid>

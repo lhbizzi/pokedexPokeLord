@@ -55,7 +55,7 @@ export const Profile = ({ pokemonData }) => {
     <>
       <Navbar hideSearch />
       <Container maxWidth="md">
-        <Paper elevation={3}>
+        <Paper elevation={3} sx={{ marginBottom: "20px" }}>
           <Box
             display="flex"
             justifyContent="center"
