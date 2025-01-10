@@ -10,6 +10,8 @@ export const Skeletons = () => {
         <Skeleton variant="rounded" width='100%' height={150} sx={{ marginBottom: '10px' }}/>
         <Skeleton variant="rounded" width='100%' height={150} sx={{ marginBottom: '10px' }}/>
         <Skeleton variant="rounded" width='100%' height={150} sx={{ marginBottom: '10px' }}/>
+        <Skeleton variant="rounded" width='100%' height={150} sx={{ marginBottom: '10px' }}/>
+        <Skeleton variant="rounded" width='100%' height={150} sx={{ marginBottom: '10px' }}/>
     </Container>
   )
 }

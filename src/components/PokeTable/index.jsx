@@ -15,11 +15,11 @@ export default function PokeTable(pokemonData) {
                 <TableBody>
                     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                         <TableCell align="left">Altura:</TableCell>
-                        <TableCell align="left">{height} cm</TableCell>
+                        <TableCell align="left">{height/10} m</TableCell>
                     </TableRow>
                     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                         <TableCell align="left">Peso:</TableCell>
-                        <TableCell align="left">{weight} g</TableCell>
+                        <TableCell align="left">{weight/10} kg</TableCell>
                     </TableRow>
                     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                         <TableCell align="left">Tipo:</TableCell>

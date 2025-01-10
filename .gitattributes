@@ -1,0 +1,8 @@
+# Force arquivos de texto a usar LF
+* text=auto
+
+# Defina configurações específicas para arquivos
+*.jsx text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
