@@ -52,5 +52,4 @@ Home:
 ![image](https://github.com/user-attachments/assets/636834e5-f45d-4638-9542-08f280b28475)
 Profile:
 ![image](https://github.com/user-attachments/assets/15fb53a3-bdb9-4a0e-93a3-909f19a6ee7b)
-Profile:
 ![image](https://github.com/user-attachments/assets/f54b379f-2cef-4449-b8c9-ab38f72e5a59)
