@@ -46,7 +46,7 @@ Project Structure
 - axios documentation.
 
 ## Link to test
-To test the website, simply click on the link next to it: [PokeLord](https://pokedex-poke-lord.vercel.app).
+To test the website, simply click on the link next to it: [PokeLord](https://pokelord.vercel.app).
 
 Home:
 ![image](https://github.com/user-attachments/assets/636834e5-f45d-4638-9542-08f280b28475)
