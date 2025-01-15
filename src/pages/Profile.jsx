@@ -11,29 +11,54 @@ import {
 import PokeTable from "../components/PokeTable";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import indisponível from "../assets/indisponivel.png";
+import indisponivel from "../assets/indisponivel.png";
+import NavigationButtons from "../components/NavigationPokeButton"; // Importação do componente
 
 export const Profile = ({ pokemonData }) => {
-  const { name, sprites, moves, id } = pokemonData || {};
   const navigate = useNavigate();
+  const [currentPokemon, setCurrentPokemon] = useState(pokemonData); // Estado do Pokémon atual
   const [animation, setAnimation] = useState(null);
 
   useEffect(() => {
     if (!pokemonData) {
       navigate("/");
     }
-  }, [navigate, pokemonData]);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Adiciona um efeito de rolagem suave
+    });
+  }, [navigate, pokemonData, currentPokemon]);
 
-  if (!pokemonData) return null;
+  const fetchPokemonById = async (pokemonId) => {
+    try {
+      const response = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
+      );
+      setCurrentPokemon(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar Pokémon:", error);
+    }
+  };
 
-  let nameInfo = null;
-  let nameInfo1 = null;
+  const handleNextPokemon = () => {
+    if (currentPokemon.id < 1025) {
+      fetchPokemonById(currentPokemon.id + 1);
+    }
+  };
+
+  const handlePreviousPokemon = () => {
+    if (currentPokemon.id > 1) {
+      fetchPokemonById(currentPokemon.id - 1);
+    }
+  };
+
+  if (!currentPokemon) return null;
 
   let respGif = null;
 
   axios
     .get(
-      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`,
+      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${currentPokemon.id}.gif`,
     )
     .then(() => {
       setAnimation(true);
@@ -41,19 +66,31 @@ export const Profile = ({ pokemonData }) => {
     .catch(() => setAnimation(null));
 
   if (animation) {
-    respGif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`;
+    respGif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${currentPokemon.id}.gif`;
   } else {
-    respGif = indisponível;
+    respGif = indisponivel;
   }
 
-  if (sprites.front_female) {
-    nameInfo = "Versão Feminina";
-    nameInfo1 = "Versão Shiny Feminina";
-  }
+  const imgShiny = currentPokemon.sprites.front_shiny || indisponivel;
+  const imgFemale = currentPokemon.sprites.front_female || indisponivel;
+  const imgFemaleShiny =
+    currentPokemon.sprites.front_shiny_female || indisponivel;
+  const imgShinyBack = currentPokemon.sprites.back_shiny || indisponivel;
+  const imgFemaleBack = currentPokemon.sprites.back_female || indisponivel;
+  const imgFemaleShinyBack =
+    currentPokemon.sprites.back_shiny_female || indisponivel;
 
   return (
     <>
       <Navbar hideSearch />
+      <NavigationButtons
+        currentId={currentPokemon.id}
+        maxId={1025}
+        onPrevious={handlePreviousPokemon}
+        onNext={handleNextPokemon}
+        text1="Anterior"
+        text2="Próximo"
+      />
       <Container maxWidth="md">
         <Paper elevation={3} sx={{ marginBottom: "20px" }}>
           <Box
@@ -64,7 +101,8 @@ export const Profile = ({ pokemonData }) => {
             flexDirection="column"
           >
             <Typography variant="h4">
-              {name.charAt(0).toUpperCase() + name.slice(1)}
+              {currentPokemon.name.charAt(0).toUpperCase() +
+                currentPokemon.name.slice(1)}
             </Typography>
             <Box
               display="flex"
@@ -82,36 +120,39 @@ export const Profile = ({ pokemonData }) => {
             >
               <Box
                 component="img"
-                src={sprites.front_default}
+                src={currentPokemon.sprites.front_default}
                 width={"100%"}
                 height={"100%"}
               />
               <Box
                 component="img"
-                src={sprites.back_default}
+                src={currentPokemon.sprites.back_default}
                 width={"100%"}
                 height={"100%"}
               />
-              <PokeTable pokemonData={pokemonData} />
+              <PokeTable pokemonData={currentPokemon} />
             </Box>
             <Box width={"100%"} alignItems={"center"} justifyContent={"center"}>
               <Divider>Variações</Divider>
               <Box display="flex" justifyContent="space-between">
                 <Box
                   component="img"
-                  src={sprites.front_shiny}
+                  src={imgShiny}
+                  alt="Versão shiny"
                   width={"30%"}
                   height={"30%"}
                 />
                 <Box
                   component="img"
-                  src={sprites.front_female}
+                  src={imgFemale}
+                  alt="Versão feminina"
                   width={"30%"}
                   height={"30%"}
                 />
                 <Box
                   component="img"
-                  src={sprites.front_shiny_female}
+                  src={imgFemaleShiny}
+                  alt="Versão shiny feminina"
                   width={"30%"}
                   height={"30%"}
                 />
@@ -119,19 +160,22 @@ export const Profile = ({ pokemonData }) => {
               <Box display="flex" justifyContent="space-between">
                 <Box
                   component="img"
-                  src={sprites.back_shiny}
+                  src={imgShinyBack}
+                  alt="Versão shiny (traseira)"
                   width={"30%"}
                   height={"30%"}
                 />
                 <Box
                   component="img"
-                  src={sprites.back_female}
+                  src={imgFemaleBack}
+                  alt="Versão feminina (traseira)"
                   width={"30%"}
                   height={"30%"}
                 />
                 <Box
                   component="img"
-                  src={sprites.back_shiny_female}
+                  src={imgFemaleShinyBack}
+                  alt="Versão shiny feminina (traseira)"
                   width={"30%"}
                   height={"30%"}
                 />
@@ -146,10 +190,10 @@ export const Profile = ({ pokemonData }) => {
                   <Typography>Versão Shiny</Typography>
                 </Box>
                 <Box marginLeft={"40px"}>
-                  <Typography>{nameInfo}</Typography>
+                  <Typography>Versão Feminina</Typography>
                 </Box>
                 <Box marginRight={"40px"}>
-                  <Typography>{nameInfo1}</Typography>
+                  <Typography>Versão Shiny Feminina</Typography>
                 </Box>
               </Box>
               <Divider>Animação</Divider>
@@ -168,7 +212,7 @@ export const Profile = ({ pokemonData }) => {
               </Box>
               <Divider>Habilidades</Divider>
               <Box textAlign={"center"} marginTop="15px">
-                {moves.map((moveData, key) => (
+                {currentPokemon.moves.map((moveData, key) => (
                   <Chip
                     key={key}
                     sx={{ margin: "5px" }}
@@ -176,6 +220,14 @@ export const Profile = ({ pokemonData }) => {
                   />
                 ))}
               </Box>
+              <NavigationButtons
+                currentId={currentPokemon.id}
+                maxId={1025}
+                onPrevious={handlePreviousPokemon}
+                onNext={handleNextPokemon}
+                text1="<"
+                text2=">"
+              />
             </Box>
           </Box>
         </Paper>

@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
-import { typeHandler } from "../../utils";
+import { typeHandler } from "../../utils/typeHandler";
 
 export default function Pokecard({ name, image, types, id, onClick }) {
   return (
