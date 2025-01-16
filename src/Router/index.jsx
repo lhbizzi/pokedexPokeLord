@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Profile } from "../pages/Profile";
@@ -10,7 +10,7 @@ export const Routers = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes style={{ backgrounColor: 'red'}}>
+      <Routes key={pokemonData}>
         <Route path="/" element={<Home setPokemonData={setPokemonData} />} />
         <Route
           path="/profile"

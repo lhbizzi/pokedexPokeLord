@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -6,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
-// import SwitchTheme from "../SwitchTheme";
+import PropTypes from 'prop-types';
 
 const debounce = (func, delay) => {
   let timeout;
@@ -102,3 +101,8 @@ export default function Navbar({ pokemonFilter, hideSearch }) {
     </Box>
   );
 }
+
+Navbar.propTypes = {
+  pokemonFilter: PropTypes.func.isRequired,
+  hideSearch: PropTypes.bool,
+};

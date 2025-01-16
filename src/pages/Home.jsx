@@ -1,12 +1,13 @@
 import { Box, Grid } from "@mui/material";
 import { Container } from "@mui/system";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Pokecard from "../components/pokecard";
 import { Skeletons } from "../components/Skeletons";
 import { PokemonAPI } from "../utils/pokemonApi";
 import { formattedName } from "../utils/formatation";
+import PropTypes from 'prop-types';
 
 export const Home = ({ setPokemonData }) => {
   const [pokemons, setPokemons] = useState([]);
@@ -67,4 +68,8 @@ export const Home = ({ setPokemonData }) => {
       </Container>
     </div>
   );
+};
+
+Home.propTypes = {
+  setPokemonData: PropTypes.func.isRequired,
 };
