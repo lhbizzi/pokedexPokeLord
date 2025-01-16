@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
-import { typeHandler } from "../../utils/typeHandler";
+import { typeHandler } from "../../utils/formatation";
 
 export default function Pokecard({ name, image, types, id, onClick }) {
   return (
@@ -20,10 +20,15 @@ export default function Pokecard({ name, image, types, id, onClick }) {
       }}
       onClick={onClick}
     >
-      <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: "right", marginRight: "15px", marginTop: "5px", }}>
+      <Typography
+        gutterBottom
+        variant="h5"
+        component="div"
+        sx={{ textAlign: "right", marginRight: "15px", marginTop: "5px" }}
+      >
         {id}
       </Typography>
-      <CardMedia sx={{ height: 250 }} image={image} title="pokemon image" />
+      <CardMedia sx={{ height: 250 }} image={image} title={name} />
       <CardContent>
         <Box
           display="flex"

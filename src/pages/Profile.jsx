@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import {
-  Box,
-  Chip,
-  Container,
-  Divider,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Box, Chip, Container, Divider, Typography } from "@mui/material";
 import PokeTable from "../components/PokeTable";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -92,7 +85,7 @@ export const Profile = ({ pokemonData }) => {
         text2="Próximo"
       />
       <Container maxWidth="md">
-        <Paper elevation={3} sx={{ marginBottom: "20px" }}>
+        <Box sx={{ marginBottom: "40px" }}>
           <Box
             display="flex"
             justifyContent="center"
@@ -134,66 +127,82 @@ export const Profile = ({ pokemonData }) => {
             </Box>
             <Box width={"100%"} alignItems={"center"} justifyContent={"center"}>
               <Divider>Variações</Divider>
-              <Box display="flex" justifyContent="space-between">
-                <Box
-                  component="img"
-                  src={imgShiny}
-                  alt="Versão shiny"
-                  width={"30%"}
-                  height={"30%"}
-                />
-                <Box
-                  component="img"
-                  src={imgFemale}
-                  alt="Versão feminina"
-                  width={"30%"}
-                  height={"30%"}
-                />
-                <Box
-                  component="img"
-                  src={imgFemaleShiny}
-                  alt="Versão shiny feminina"
-                  width={"30%"}
-                  height={"30%"}
-                />
-              </Box>
-              <Box display="flex" justifyContent="space-between">
-                <Box
-                  component="img"
-                  src={imgShinyBack}
-                  alt="Versão shiny (traseira)"
-                  width={"30%"}
-                  height={"30%"}
-                />
-                <Box
-                  component="img"
-                  src={imgFemaleBack}
-                  alt="Versão feminina (traseira)"
-                  width={"30%"}
-                  height={"30%"}
-                />
-                <Box
-                  component="img"
-                  src={imgFemaleShinyBack}
-                  alt="Versão shiny feminina (traseira)"
-                  width={"30%"}
-                  height={"30%"}
-                />
-              </Box>
               <Box
                 display="flex"
-                justifyContent="space-between"
-                marginBottom={"40px"}
-                marginLeft={"15px"}
+                flexDirection="column"
+                alignItems="center"
+                marginBottom="20px"
+                marginTop={"20px"}
               >
-                <Box marginLeft={"40px"}>
-                  <Typography>Versão Shiny</Typography>
-                </Box>
-                <Box marginLeft={"40px"}>
-                  <Typography>Versão Feminina</Typography>
-                </Box>
-                <Box marginRight={"40px"}>
-                  <Typography>Versão Shiny Feminina</Typography>
+                <Box display="flex" justifyContent="space-between" width="100%">
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    width="30%"
+                  >
+                    <Box
+                      component="img"
+                      src={imgShiny}
+                      alt="Versão shiny"
+                      width="100%"
+                      height="auto"
+                    />
+                    <Box
+                      component="img"
+                      src={imgShinyBack}
+                      alt="Versão shiny"
+                      width="100%"
+                      height="auto"
+                    />
+                    <Typography align="center">Versão Shiny</Typography>
+                  </Box>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    width="30%"
+                  >
+                    <Box
+                      component="img"
+                      src={imgFemale}
+                      alt="Versão feminina"
+                      width="100%"
+                      height="auto"
+                    />
+                    <Box
+                      component="img"
+                      src={imgFemaleBack}
+                      alt="Versão feminina"
+                      width="100%"
+                      height="auto"
+                    />
+                    <Typography align="center">Versão Feminina</Typography>
+                  </Box>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    width="30%"
+                  >
+                    <Box
+                      component="img"
+                      src={imgFemaleShiny}
+                      alt="Versão shiny feminina"
+                      width="100%"
+                      height="auto"
+                    />
+                    <Box
+                      component="img"
+                      src={imgFemaleShinyBack}
+                      alt="Versão shiny feminina"
+                      width="100%"
+                      height="auto"
+                    />
+                    <Typography align="center">
+                      Versão Shiny Feminina
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
               <Divider>Animação</Divider>
@@ -230,7 +239,7 @@ export const Profile = ({ pokemonData }) => {
               />
             </Box>
           </Box>
-        </Paper>
+        </Box>
       </Container>
     </>
   );
