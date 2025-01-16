@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Pokecard from "../components/pokecard";
 import { Skeletons } from "../components/Skeletons";
 import { PokemonAPI } from "../utils/pokemonApi";
+import { formattedName } from "../utils/formatation";
 
 export const Home = ({ setPokemonData }) => {
   const [pokemons, setPokemons] = useState([]);
@@ -30,7 +31,7 @@ export const Home = ({ setPokemonData }) => {
       setPokemons(allPokemons);
     } else {
       const filteredPokemons = allPokemons.filter((pokemon) =>
-        pokemon.name.toLowerCase().includes(name.toLowerCase())
+        pokemon.name.toLowerCase().includes(name.toLowerCase()),
       );
       setPokemons(filteredPokemons);
     }
@@ -53,7 +54,7 @@ export const Home = ({ setPokemonData }) => {
               <Grid item xs={12} sm={6} md={4} lg={2} key={key}>
                 <Box onClick={() => pokemonPickHandler(pokemon)}>
                   <Pokecard
-                    name={pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                    name={formattedName(pokemon.name)}
                     image={pokemon.sprites.front_default}
                     types={pokemon.types}
                     id={pokemon.id}
