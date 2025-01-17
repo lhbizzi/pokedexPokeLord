@@ -1,6 +1,5 @@
 import { Box, Fab } from '@mui/material';
 import { SlArrowUp } from "react-icons/sl";
-import React from 'react'
 
 const ScrollToTop = () => {
   return (
