@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { Box, Chip, Container, Divider, Typography } from "@mui/material";
 import PokeTable from "../components/PokeTable";
@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import indisponivel from "../assets/indisponivel.png";
 import NavigationButtons from "../components/NavigationPokeButton"; // Importação do componente
+import PropTypes from 'prop-types';
+import { formattedName } from "../utils/formatation";
 
 export const Profile = ({ pokemonData }) => {
   const navigate = useNavigate();
@@ -94,8 +96,7 @@ export const Profile = ({ pokemonData }) => {
             flexDirection="column"
           >
             <Typography variant="h4">
-              {currentPokemon.name.charAt(0).toUpperCase() +
-                currentPokemon.name.slice(1)}
+              {formattedName(currentPokemon.name)}
             </Typography>
             <Box
               display="flex"
@@ -243,4 +244,8 @@ export const Profile = ({ pokemonData }) => {
       </Container>
     </>
   );
+};
+
+Profile.propTypes = {
+  pokemonData: PropTypes.object.isRequired,
 };
