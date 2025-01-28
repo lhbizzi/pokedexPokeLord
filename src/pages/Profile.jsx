@@ -226,7 +226,7 @@ export const Profile = ({ pokemonData }) => {
                   <Chip
                     key={key}
                     sx={{ margin: "5px" }}
-                    label={moveData.move.name}
+                    label={formattedName(moveData.move.name)}
                   />
                 ))}
               </Box>
